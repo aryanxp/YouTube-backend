@@ -13,7 +13,7 @@ app.get("/subscribers", async (req, res) => {
     const subscribers = await subscribers.find();
     res.status(200).json(subscribers);
   } catch (err) {
-    res.status(500).json("errors10101");
+    res.status(500).json({message: err.message});
   }
 });
 
