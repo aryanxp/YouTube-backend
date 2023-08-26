@@ -23,7 +23,7 @@ mongoose.connect(DATABASE_URL, {
   useUnifiedTopology: true,
 });
 const db = mongoose.connection;
-db.on("error", (err) => console.log("Error connecting to database"));
+db.on("error", (err) => console.log(err));
 db.once("open", () => console.log("connected to database"));
 
 // Start Server
