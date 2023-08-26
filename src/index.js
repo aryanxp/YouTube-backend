@@ -17,7 +17,8 @@ const DATABASE_URL =
   USERNAME +
   ":" +
   PASSWORD +
-  "@cluster0.vikdii3.mongodb.net/";
+  "@cluster0.vikdii3.mongodb.net/" +
+  "youtube?retryWrites=true&w=majority";
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
