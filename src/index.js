@@ -8,8 +8,8 @@ const USERNAME = process.env.USER;
 const PASSWORD = process.env.PASSWORD;
 
 // Parse JSON bodies (as sent by API clients)
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Connect to DATABASE
 const DATABASE_URL =
