@@ -5,5 +5,11 @@
     "PORT": "3000",
     "USER": "aryan",
     "PASSWORD": "ruJRnIf46e9OuoWn"
-  }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
