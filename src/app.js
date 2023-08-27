@@ -47,7 +47,7 @@ app.get("/subscribers/:id", async (req, res) => {
   }
   try {
     const subscribers = await subscriber.find({ _id: id }).then((result) => {
-      res.status(200).json(subscribers);
+      res.status(200).json(result);
     });
   } catch (err) {
     res.status(400).json({ message: err.message });
