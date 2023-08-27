@@ -46,7 +46,7 @@ app.get("/subscribers/:id", async (req, res) => {
     return;
   }
   try {
-    const subscribers = await subscriber.find({ _id: id }).then((res) => {
+    const subscribers = await subscriber.find({ _id: id }).then((result) => {
       res.status(200).json(subscribers);
     });
   } catch (err) {
@@ -83,7 +83,7 @@ app.patch("/subscribers/:id", async (req, res) => {
     const subscribers = await subscriber
       .find()
       .updateOne({ _id: id }, body, { updated: True })
-      .then((susbscriber) => {
+      .then((result) => {
         res.status(200).json(subscriber);
       });
   } catch (err) {
