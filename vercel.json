@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [{ "use": "@vercel/node" }],
   "env": {
-    "PORT": 3000,
+    "PORT": "3000",
     "USER": "aryan",
     "PASSWORD": "ruJRnIf46e9OuoWn"
   }
