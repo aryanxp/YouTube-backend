@@ -1,7 +1,7 @@
 const subscriber = require("./models/subscribers");
+const { ObjectId } = require("mongodb");
 const express = require("express");
 const app = express();
-const { ObjectId } = require("mongodb");
 
 // Your code goes here
 
