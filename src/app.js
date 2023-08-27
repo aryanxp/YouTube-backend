@@ -46,7 +46,7 @@ app.get("/subscribers/:id", async (req, res) => {
     return;
   }
   try {
-    const subscriber = await subscriber.findById(id).then((res) => {
+    const subscriber = await subscriber.find({ _id: id }).then((res) => {
       res.status(200).json(subscriber);
     });
   } catch (err) {
@@ -61,9 +61,12 @@ app.delete("/subscribers/:id", async (req, res) => {
     return;
   }
   try {
-    const subscriber = await subscriber.findByIdAndDelete(id).then((result) => {
-      res.status(200).json({ message: "Subscriber deleted" });
-    });
+    const subscriber = await subscriber
+      .find()
+      .deleteOne({ _id: id })
+      .then((result) => {
+        res.status(200).json({ message: "Subscriber deleted" });
+      });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -79,8 +82,8 @@ app.patch("/subscribers/:id", async (req, res) => {
   try {
     const subscriber = await subscriber
       .find()
-      .updateOne({ _id: id }, body)
-      .then((result) => {
+      .updateOne({ _id: id }, body, { updated: True })
+      .then((susbscriber) => {
         res.status(200).json(subscriber);
       });
   } catch (err) {
