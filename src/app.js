@@ -46,8 +46,8 @@ app.get("/subscribers/:id", async (req, res) => {
     return;
   }
   try {
-    const subscriber = await subscriber.find({ _id: id }).then((res) => {
-      res.status(200).json(subscriber);
+    const subscribers = await subscriber.find({ _id: id }).then((res) => {
+      res.status(200).json(subscribers);
     });
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -61,7 +61,7 @@ app.delete("/subscribers/:id", async (req, res) => {
     return;
   }
   try {
-    const subscriber = await subscriber
+    const subscribers = await subscriber
       .find()
       .deleteOne({ _id: id })
       .then((result) => {
@@ -80,7 +80,7 @@ app.patch("/subscribers/:id", async (req, res) => {
   }
   const body = req.body;
   try {
-    const subscriber = await subscriber
+    const subscribers = await subscriber
       .find()
       .updateOne({ _id: id }, body, { updated: True })
       .then((susbscriber) => {
