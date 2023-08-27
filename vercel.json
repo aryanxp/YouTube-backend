@@ -1,6 +1,11 @@
 {
   "version": 2,
-  "builds": [{ "use": "@vercel/node" }],
+  "builds": [
+    {
+      "src": "/src/index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "env": {
     "PORT": "3000",
     "USER": "aryan",
@@ -8,7 +13,7 @@
   },
   "routes": [
     {
-      "src": "/",
+      "src": "/(.*)",
       "dest": "/src/index.js"
     }
   ]
