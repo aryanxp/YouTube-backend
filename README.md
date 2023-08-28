@@ -127,7 +127,7 @@ Content-Type: application/json
     "__v": 0
   }
 ]
-
+```
 
 ### Fetching a subscriber - GET /subscribers/:id
 
