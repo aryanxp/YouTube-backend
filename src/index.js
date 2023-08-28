@@ -2,8 +2,9 @@ const express = require("express");
 require("dotenv").config();
 const app = require("./app.js");
 const mongoose = require("mongoose");
+// 3000 is the default port and custom port is fetched from .env
 const port = process.env.PORT || 3000;
-
+// MONGODB_URI fetched from .env file
 const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to DATABASE
 const DATABASE_URL = MONGODB_URI;
