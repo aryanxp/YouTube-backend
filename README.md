@@ -85,17 +85,45 @@ Content-Type: application/json
 
 [
   {
-    "_id": "612c22b6a62e4b001f4e1a5a",
-    "name": "John Doe",
-    "email": "johndoe@example.com",
-    "subscribedOn": "2022-08-31T10:22:30.000Z",
+    "_id": "64ec47fbba60e5124859c1a8",
+    "name": "Jeread Krus",
+    "subscribedChannel": "CNET",
+    "subscribedDate": "2023-08-28T07:08:43.619Z",
     "__v": 0
   },
   {
-    "_id": "61307c2fa62e4b001f4e1a5b",
-    "name": "Jane Smith",
-    "email": "janesmith@example.com",
-    "subscribedOn": "2022-09-02T08:15:45.000Z",
+    "_id": "64ec47fbba60e5124859c1a9",
+    "name": "John Doe",
+    "subscribedChannel": "freeCodeCamp.org",
+    "subscribedDate": "2023-08-28T07:08:43.620Z",
+    "__v": 0
+  },
+  {
+    "_id": "64ec47fbba60e5124859c1aa",
+    "name": "Lucifer",
+    "subscribedChannel": "Sentex",
+    "subscribedDate": "2023-08-28T07:08:43.621Z",
+    "__v": 0
+  },
+  {
+    "_id": "64ec47fbba60e5124859c1ab",
+    "name": "Aryan",
+    "subscribedChannel": "CNET",
+    "subscribedDate": "2023-08-28T07:08:43.621Z",
+    "__v": 0
+  },
+  {
+    "_id": "64ec47fbba60e5124859c1ac",
+    "name": "Aniket",
+    "subscribedChannel": "freeCodeCamp.org",
+    "subscribedDate": "2023-08-28T07:08:43.621Z",
+    "__v": 0
+  },
+  {
+    "_id": "64ec47fbba60e5124859c1ad",
+    "name": "Aryanupdated",
+    "subscribedChannel": "Youtubeupdated",
+    "subscribedDate": "2023-08-28T07:08:43.621Z",
     "__v": 0
   }
 ]
@@ -145,11 +173,7 @@ Status: 201 Created
 Content-Type: application/json
 
 {
-  "_id": "61307c2fa62e4b001f4e1a5b",
-  "name": "Alice Johnson",
-  "email": "alicejohnson@example.com",
-  "subscribedOn": "2023-08-28T12:00:00.000Z",
-  "__v": 0
+   "message": "User created successfully"
 }
 ```
 
@@ -173,11 +197,8 @@ Status: 200 OK
 Content-Type: application/json
 
 {
-  "_id": "61307c2fa62e4b001f4e1a5b",
-  "name": "Alice Thompson",
-  "email": "alicejohnson@example.com",
-  "subscribedOn": "2023-08-28T12:00:00.000Z",
-  "__v": 0
+   "message": "Subscriber Updated",
+   "modified": 1
 }
 ```
 
@@ -192,7 +213,9 @@ DELETE /subscribers/61307c2fa62e4b001f4e1a5b
 **Response:**
 
 ```json
-Status: 204 No Content
+{
+  "message": "Subscriber deleted"
+}
 ```
 
 ## Conclusion
