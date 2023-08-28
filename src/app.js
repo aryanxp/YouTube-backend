@@ -3,6 +3,11 @@ const { ObjectId } = require("mongodb");
 const express = require("express");
 const app = express();
 
+//set json intendation to 2 spaces
+app.set("json spaces", 2);
+
+
+
 // Your code goes here
 
 app.get("/", (req, res) => {
@@ -19,15 +24,19 @@ app.get("/subscribers", async (req, res) => {
 });
 
 app.post("/subscribers", async (req, res) => {
-  const body = req.body;
-  const result = await subscriber
-    .create(body)
-    .then((result) => {
-      res.status(200).json(result);
-    })
-    .catch((err) => {
-      res.status(500).json({ message: err.message });
+  const { name, subscribedChannel } = req.body;
+  try {
+    const user = new subscriber({
+      name: name,
+      subscribedChannel: subscribedChannel,
     });
+    await user.save();
+    res.json({
+      message: "User created successfully",
+    });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 });
 
 app.get("/subscribers/names", async (req, res) => {
