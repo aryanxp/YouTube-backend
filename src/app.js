@@ -84,17 +84,17 @@ app.delete("/subscribers/:id", async (req, res) => {
 
 app.patch("/subscribers/:id", async (req, res) => {
   const id = req.params.id;
+  const updateObject = req.body;
   if (ObjectId.isValid(id) === false) {
     res.status(400).json({ message: "Invalid ID" });
     return;
   }
-  const { name, subscribedChannel } = req.body;
   try {
     const subscribers = await subscriber
       .find()
-      .updateOne({ _id: id }, body, { updated: True })
+      .updateOne({ _id: id }, { $set: updateObject })
       .then((result) => {
-        res.status(200).json(subscriber);
+        res.status(200).json(result);
       });
   } catch (err) {
     res.status(400).json({ message: err.message });
