@@ -7,10 +7,6 @@ const port = process.env.PORT;
 const USERNAME = process.env.USER;
 const PASSWORD = process.env.PASSWORD;
 
-// Parse JSON bodies (as sent by API clients)
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
 // Connect to DATABASE
 const DATABASE_URL =
   "mongodb+srv://" +
@@ -26,7 +22,6 @@ mongoose.connect(DATABASE_URL, {
 const db = mongoose.connection;
 db.on("error", (err) => console.log(err));
 db.once("open", () => console.log("connected to database"));
-
 
 // Start Server
 app.listen(port, () => console.log(`App listening on port ${port}!`));

@@ -6,8 +6,9 @@ const app = express();
 //set json intendation to 2 spaces
 app.set("json spaces", 2);
 
-
-
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 // Your code goes here
 
 app.get("/", (req, res) => {
