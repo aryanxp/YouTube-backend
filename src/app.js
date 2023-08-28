@@ -88,7 +88,7 @@ app.patch("/subscribers/:id", async (req, res) => {
     res.status(400).json({ message: "Invalid ID" });
     return;
   }
-  const body = req.body;
+  const { name, subscribedChannel } = req.body;
   try {
     const subscribers = await subscriber
       .find()
