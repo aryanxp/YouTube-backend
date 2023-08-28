@@ -91,10 +91,11 @@ app.patch("/subscribers/:id", async (req, res) => {
   }
   try {
     const subscribers = await subscriber
-      .find()
       .updateOne({ _id: id }, { $set: updateObject })
       .then((result) => {
-        res.status(200).json(result);
+        res
+          .status(200)
+          .json({ message: "Subscriber updated", modified: result.nModified });
       });
   } catch (err) {
     res.status(400).json({ message: err.message });
