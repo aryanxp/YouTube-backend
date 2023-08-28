@@ -2,6 +2,10 @@
 
 This is a basic backend project called "YouTube Subscribers" that utilizes Express.js and MongoDB with Mongoose to create a RESTful API for performing CRUD operations on user data. The application allows you to fetch, create, update, and delete user records from the MongoDB database.
 
+# Project Summary
+
+https://docs.google.com/document/d/e/2PACX-1vR0Be_-TOEGEp1mhYCVjHjRVdXW-HFCrXUYhUIVBc9b1G8xgAEDUtmDF6XBZbqq3w/pub
+
 # YouTube Video Link
 
 Demo Tutorial on - https://youtu.be/-AkijTXhK0o
