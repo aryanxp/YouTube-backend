@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const subscriberModel = require("./models/subscribers");
 const data = require("./data");
+require("dotenv").config();
 
 // Connect to DATABASE
-const DATABASE_URL =
-  "mongodb+srv://aryan:ruJRnIf46e9OuoWn@cluster0.vikdii3.mongodb.net/youtube?retryWrites=true&w=majority";
+const DATABASE_URL = process.env.MONGODB_URI;
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
