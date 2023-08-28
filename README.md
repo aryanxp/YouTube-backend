@@ -4,7 +4,7 @@ This is a basic backend project called "YouTube Subscribers" that utilizes Expre
 
 # Project Summary
 
-https://docs.google.com/document/d/e/2PACX-1vR0Be_-TOEGEp1mhYCVjHjRVdXW-HFCrXUYhUIVBc9b1G8xgAEDUtmDF6XBZbqq3w/pub
+https://docs.google.com/document/d/1Jt4zVS1UI-1CEChg08msUh13gaQNqk5w/edit?usp=sharing&ouid=102128415381824138785&rtpof=true&sd=true
 
 # YouTube Video Link
 
