@@ -2,19 +2,12 @@ const express = require("express");
 require("dotenv").config();
 const app = require("./app.js");
 const mongoose = require("mongoose");
-const port = process.env.PORT;
-//DID NOT USE USERNAMER IN PROCESS.ENV BECAUSE IT WAS USERNAME OF COMPUTER
-const USERNAME = process.env.USER;
-const PASSWORD = process.env.PASSWORD;
+const port = process.env.PORT || 3000;
 
+const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to DATABASE
-const DATABASE_URL =
-  "mongodb+srv://" +
-  USERNAME +
-  ":" +
-  PASSWORD +
-  "@cluster0.vikdii3.mongodb.net/" +
-  "youtube?retryWrites=true&w=majority";
+const DATABASE_URL = MONGODB_URI;
+
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
